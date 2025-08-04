@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Logo</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 50px;
+        font-family: Arial, sans-serif;
+      }
+      .test-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .test-section {
+        padding: 20px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+      }
+      .logo-test {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ddd;
+      }
+      .color-bg {
+        padding: 20px;
+        margin: 10px 0;
+      }
+      .rose {
+        background: #e8a5c4;
+      }
+      .blue {
+        background: #a8c5e8;
+      }
+      .orange {
+        background: #ff5722;
+      }
+      .yellow {
+        background: #f4d03f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Test d'affichage des logos</h1>
+
+    <div class="test-container">
+      <div class="test-section">
+        <h2>Logo Simple</h2>
+        <img
+          src="/logo-simple.svg"
+          alt="Logo Simple"
+          class="logo-test"
+          onerror="this.style.border='3px solid red'; this.alt='ERREUR: Logo non trouvé';"
+        />
+      </div>
+
+      <div class="test-section">
+        <h2>Logo Simple sur différents fonds</h2>
+        <div class="color-bg rose">
+          <img src="/logo-simple.svg" alt="Logo Simple" class="logo-test" />
+          <span>Rose</span>
+        </div>
+        <div class="color-bg blue">
+          <img src="/logo-simple.svg" alt="Logo Simple" class="logo-test" />
+          <span>Bleu</span>
+        </div>
+        <div class="color-bg orange">
+          <img src="/logo-simple.svg" alt="Logo Simple" class="logo-test" />
+          <span>Orange</span>
+        </div>
+        <div class="color-bg yellow">
+          <img src="/logo-simple.svg" alt="Logo Simple" class="logo-test" />
+          <span>Jaune</span>
+        </div>
+      </div>
+
+      <div class="test-section">
+        <h2>Autres logos</h2>
+        <img src="/logo-black.svg" alt="Logo Black" class="logo-test" />
+        <img src="/logo-white.svg" alt="Logo White" class="logo-test" />
+        <img src="/logo-orange.svg" alt="Logo Orange" class="logo-test" />
+        <img src="/logo-cream.svg" alt="Logo Cream" class="logo-test" />
+      </div>
+    </div>
+
+    <script>
+      // Test de chargement des images
+      document.querySelectorAll("img").forEach((img) => {
+        img.onload = function () {
+          console.log("✅ Logo chargé:", this.src);
+        };
+        img.onerror = function () {
+          console.error("❌ Erreur de chargement:", this.src);
+          this.style.backgroundColor = "red";
+          this.style.color = "white";
+          this.innerHTML = "ERREUR";
+        };
+      });
+    </script>
+  </body>
+</html>
