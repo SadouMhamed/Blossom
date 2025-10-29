@@ -8,34 +8,25 @@ const CustomCursor = () => {
   useEffect(() => {
     const updatePosition = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
-    };
 
-    const handleMouseEnter = (e) => {
-      // Add null check for e.target
+      // Check if hovering over clickable elements
       if (!e.target) return;
 
-      if (
+      const isClickable =
         e.target.classList?.contains("clickable") ||
         e.target.tagName === "BUTTON" ||
         e.target.tagName === "A" ||
-        (e.target.closest && e.target.closest(".clickable"))
-      ) {
-        setIsHovering(true);
-      }
-    };
+        (e.target.closest && e.target.closest(".clickable")) ||
+        (e.target.closest && e.target.closest("button")) ||
+        (e.target.closest && e.target.closest("a"));
 
-    const handleMouseLeave = () => {
-      setIsHovering(false);
+      setIsHovering(isClickable);
     };
 
     document.addEventListener("mousemove", updatePosition);
-    document.addEventListener("mouseenter", handleMouseEnter, true);
-    document.addEventListener("mouseleave", handleMouseLeave, true);
 
     return () => {
       document.removeEventListener("mousemove", updatePosition);
-      document.removeEventListener("mouseenter", handleMouseEnter, true);
-      document.removeEventListener("mouseleave", handleMouseLeave, true);
     };
   }, []);
 
@@ -48,7 +39,9 @@ const CustomCursor = () => {
       }}
     >
       <div className="cursor-inner">
-        {isHovering && <div className="cursor-lambda">λ</div>}
+        {isHovering && (
+          <img src="/sansBackGround.png" alt="Logo" className="cursor-logo" />
+        )}
       </div>
     </div>
   );

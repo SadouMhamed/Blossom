@@ -141,7 +141,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState("home"); // 'home', 'section1', 'section2', etc.
 
   useEffect(() => {
-    if (showLoading || showTransition) return;
+    if (showLoading || showTransition || currentPage !== "home") return;
 
     // Initialiser Lenis pour le smooth scroll
     const lenis = new Lenis({
@@ -290,7 +290,7 @@ function App() {
       lenis.destroy();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [showLoading, showTransition]);
+  }, [showLoading, showTransition, currentPage]);
 
   const handleLoadingComplete = () => {
     setShowLoading(false);
@@ -315,6 +315,8 @@ function App() {
   const handleBackToHome = () => {
     // Retourner à la page principale
     setCurrentPage("home");
+    // Reset scroll position
+    window.scrollTo(0, 0);
   };
 
   // Rendu conditionnel des pages
