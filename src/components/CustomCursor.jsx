@@ -4,6 +4,7 @@ import "./CustomCursor.scss";
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [cursorColor, setCursorColor] = useState("#ff5722"); // Default orange
 
   useEffect(() => {
     const updatePosition = (e) => {
@@ -21,6 +22,14 @@ const CustomCursor = () => {
         (e.target.closest && e.target.closest("a"));
 
       setIsHovering(isClickable);
+
+      // Check if hovering over a section with a custom color
+      const scrollSection = e.target.closest(".scroll-section");
+      if (scrollSection && scrollSection.dataset.sectionColor) {
+        setCursorColor(scrollSection.dataset.sectionColor);
+      } else {
+        setCursorColor("#ff5722"); // Reset to default orange
+      }
     };
 
     document.addEventListener("mousemove", updatePosition);
@@ -38,10 +47,13 @@ const CustomCursor = () => {
         top: `${position.y}px`,
       }}
     >
-      <div className="cursor-inner">
-        {isHovering && (
-          <img src="/sansBackGround.png" alt="Logo" className="cursor-logo" />
-        )}
+      <div
+        className="cursor-inner"
+        style={{
+          backgroundColor: isHovering ? cursorColor : "#ff5722",
+        }}
+      >
+        <img src="/sansBackGround.png" alt="Logo" className="cursor-logo" />
       </div>
     </div>
   );

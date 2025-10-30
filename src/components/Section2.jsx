@@ -7,6 +7,7 @@ const Section2 = ({ onClick, className = "" }) => {
       id="section-2"
       className={`scroll-section section-2 ${className}`}
       onClick={onClick}
+      data-section-color="#e8a5c4"
     >
       <div className="section-left">
         <div className="section-image">
