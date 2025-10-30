@@ -1,4 +1,4 @@
-@import "../App.scss";
+@use "../App.scss" as *;
 
 .scroll-section {
   display: flex;
