@@ -12,6 +12,17 @@
   margin: 0 auto; // Center the content
   background: #f5f4f0;
   z-index: 1; // En dessous des sections
+  opacity: 0; // Start hidden
+  animation: fadeIn 1s ease-in-out forwards; // Fade in animation
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   .hero-left {
     flex: 1;
@@ -27,7 +38,7 @@
         font-size: 0.56rem; // Decreased by 20% (was 0.7rem)
         font-family: "PP Mori", "Inter", sans-serif;
         font-weight: 600;
-        color: rgba(26, 26, 26, 0.7);
+        color: #1a1a1a; // 100% opacity
         line-height: 1.4;
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -109,7 +120,7 @@
 
         .quote-author {
           font-size: 0.52rem; // Decreased by 20% (was 0.65rem)
-          color: rgba(26, 26, 26, 0.7);
+          color: #1a1a1a; // 100% opacity
           font-weight: 500;
           font-style: normal;
           text-transform: uppercase;
@@ -182,7 +193,7 @@
 
     span {
       font-size: 0.8rem;
-      color: rgba(26, 26, 26, 0.6);
+      color: #1a1a1a; // 100% opacity
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-weight: 500;

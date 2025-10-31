@@ -12,12 +12,28 @@ const TransitionPage = ({ onComplete }) => {
 
   return (
     <div className="transition-page">
-      {/* Formes géométriques d'arrière-plan */}
-      <div className="geometric-shapes">
-        <div className="shape shape-yellow"></div>
-        <div className="shape shape-green"></div>
-        <div className="shape shape-blue"></div>
-        <div className="shape shape-pink"></div>
+      {/* Animated logos background */}
+      <div className="animated-logos">
+        <img src="/LogoBlack.png" alt="Logo" className="logo-float logo-1" />
+        <img src="/LogoWhite.png" alt="Logo" className="logo-float logo-2" />
+        <img
+          src="/sansBackGround.png"
+          alt="Logo"
+          className="logo-float logo-3"
+        />
+        <img src="/LogoBlack.png" alt="Logo" className="logo-float logo-4" />
+        <img
+          src="/sansBackGround.png"
+          alt="Logo"
+          className="logo-float logo-5"
+        />
+        <img src="/LogoWhite.png" alt="Logo" className="logo-float logo-6" />
+        <img src="/LogoBlack.png" alt="Logo" className="logo-float logo-7" />
+        <img
+          src="/sansBackGround.png"
+          alt="Logo"
+          className="logo-float logo-8"
+        />
       </div>
 
       {/* Contenu principal */}
