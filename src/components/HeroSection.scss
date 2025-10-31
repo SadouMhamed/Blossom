@@ -2,17 +2,20 @@
 .hero-section {
   min-height: 100vh;
   display: flex;
-  padding: 8rem 4rem 4rem;
+  padding: 10rem 5rem 5rem;
   position: fixed; // Fixe pour qu'elle ne bouge pas
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
+  max-width: 1400px; // Maximum width for content
+  margin: 0 auto; // Center the content
   background: #f5f4f0;
   z-index: 1; // En dessous des sections
 
   .hero-left {
     flex: 1;
-    padding-right: 4rem;
+    padding-right: 5rem;
 
     .hero-top {
       display: flex;
@@ -21,7 +24,7 @@
       margin-bottom: 3rem;
 
       .long-live-text {
-        font-size: 0.7rem; // Adjusted to match image (11-12px)
+        font-size: 0.56rem; // Decreased by 20% (was 0.7rem)
         font-family: "PP Mori", "Inter", sans-serif;
         font-weight: 600;
         color: rgba(26, 26, 26, 0.7);
@@ -36,8 +39,8 @@
         gap: 1rem;
 
         .certified-circle {
-          width: 75px; // Adjusted to match image
-          height: 75px;
+          width: 60px; // Decreased by 20% (was 75px)
+          height: 60px;
           border: 2px solid #1a1a1a;
           border-radius: 50%;
           display: flex;
@@ -45,14 +48,14 @@
           justify-content: center;
 
           .b-corp {
-            font-size: 1.75rem; // Adjusted proportionally
+            font-size: 1.4rem; // Decreased by 20% (was 1.75rem)
             font-weight: 800;
             color: #1a1a1a;
           }
         }
 
         .certified-text {
-          font-size: 0.7rem; // Adjusted to match image
+          font-size: 0.56rem; // Decreased by 20% (was 0.7rem)
           color: #1a1a1a;
           line-height: 1.2;
 
@@ -64,11 +67,15 @@
     }
 
     .main-title {
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
 
       .title-line {
         display: block;
-        font-size: clamp(3rem, 6vw, 5rem); // Adjusted to match image (72-80px)
+        font-size: clamp(
+          0.8rem,
+          4.8vw,
+          4rem
+        ); // Decreased by 20% (from clamp values)
         font-family: "PP Mori", "Inter", sans-serif;
         font-weight: 600;
         line-height: 0.9;
@@ -92,7 +99,7 @@
 
       .quote-block {
         .quote-text {
-          font-size: 0.95rem; // Adjusted to match image (15-16px)
+          font-size: 0.76rem; // Decreased by 20% (was 0.95rem)
           font-family: "Editorial New", "Inter", serif;
           font-style: italic;
           line-height: 1.6;
@@ -101,7 +108,7 @@
         }
 
         .quote-author {
-          font-size: 0.65rem; // Adjusted to match image (10-11px)
+          font-size: 0.52rem; // Decreased by 20% (was 0.65rem)
           color: rgba(26, 26, 26, 0.7);
           font-weight: 500;
           font-style: normal;
@@ -113,11 +120,11 @@
   }
 
   .hero-right {
-    flex: 0 0 450px; // Adjusted to match image proportions
+    flex: 0 0 380px; // Decreased width from 450px to 380px
 
     .hero-image {
       width: 100%;
-      height: 550px; // Adjusted to match image proportions
+      height: 480px; // Decreased height from 550px to 480px
       position: relative;
 
       .image-placeholder {
@@ -197,7 +204,7 @@
     .hero-right {
       flex: none;
       width: 100%;
-      max-width: 450px;
+      max-width: 380px;
       margin: 0 auto;
     }
   }
@@ -220,6 +227,6 @@
 
 @media (max-width: 480px) {
   .hero-section .hero-left .main-title .title-line {
-    font-size: clamp(2.2rem, 7vw, 3.5rem); // Adjusted for mobile
+    font-size: clamp(1.76rem, 5.6vw, 2.8rem); // Decreased by 20% for mobile
   }
 }
