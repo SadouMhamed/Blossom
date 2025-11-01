@@ -7,11 +7,11 @@ const HeroSection = () => {
       <div className="hero-left">
         <div className="hero-top">
           <div className="long-live-text">
-            LONG LIVE FASHION:
+            A bold approach
             <br />
-            WELCOME TO OUR 2023
+            for ambitious brands,
             <br />
-            IMPACT REPORT
+            visionary leaders, and high-impact projects.
           </div>
           <div className="certified-badge">
             <div className="certified-circle">
@@ -40,26 +40,46 @@ const HeroSection = () => {
         <div className="quotes-section">
           <div className="quote-block">
             <p className="quote-text">
-              "Our 2023 Impact Report tells an incredible story about the
-              substantial impact we have achieved so far. As resale grows, we
-              proudly lead the way by introducing socio-economic impact
-              measurement. We have developed this report not as a beauty contest
-              but as a transparency exercise, going into all aspects of our
-              business."
+              "At Blossom &a Partners, I wanted to build more than a consultancy
+              I wanted to build a House. A House where communication is not
+              decoration, but a force of leadership. A place where strategy,
+              culture, and aesthetics converge to give meaning and create
+              influence. I deeply believe in the power of ideas, the strength of
+              narratives, and the trust that grows over time. "
             </p>
             <cite className="quote-author">
-              — FANNY MOIZANT, CO-FOUNDER & PRESIDENT OF VESTIAIRE COLLECTIVE
+              —{" "}
+              <a
+                href="https://www.linkedin.com/in/fawzia-mekkaoui-86b10860"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="author-link"
+              >
+                Fawzia Mekkaoui
+              </a>
+              , Founder & Director
             </cite>
           </div>
 
           <div className="quote-block">
             <p className="quote-text">
-              "Our unique circular business model not only sets us apart but
-              also enables us to make a significant impact in driving
-              sustainability within the fashion industry."
+              " Blossom & Partners is the embodiment of this vision:<br></br>
+              <strong>bold,</strong>
+              <strong>precise,</strong>
+              precise, and guided by collective intelligence. Our role is simple
+              to help brands, leaders, and institutions write stories that
+              inspire, connect, and last. "
             </p>
             <cite className="quote-author">
-              — MAX BITTNER, CEO OF VESTIAIRE COLLECTIVE
+              <a
+                href="https://www.linkedin.com/in/fawzia-mekkaoui-86b10860"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="author-link"
+              >
+                Fawzia Mekkaoui
+              </a>
+              , <strong>Founder & Director</strong>
             </cite>
           </div>
         </div>
