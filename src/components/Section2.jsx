@@ -20,7 +20,15 @@ const Section2 = ({ onClick, className = "" }) => {
           </div>
         </div>
       </div>
-      <div className="section-right pink-bg">
+      <div
+        className="section-right pink-bg"
+        style={{
+          backgroundImage: "url(/Back2.2.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         {/* Section navigation dots */}
 
         <div className="section-content">

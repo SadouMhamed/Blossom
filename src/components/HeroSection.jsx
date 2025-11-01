@@ -18,22 +18,22 @@ const HeroSection = () => {
               <span className="b-corp">B</span>
             </div>
             <div className="certified-text">
-              <div>Certified</div>
+              <div>Think Bold. </div>
               <div>
-                <strong>B</strong>
+                <strong>Communicate Smart.</strong>
               </div>
-              <div>Corporation</div>
+              <div>Inspire Always.</div>
             </div>
           </div>
         </div>
 
         <h1 className="main-title" data-splitting>
-          <span className="title-line">Vestiaire Collective</span>
+          <span className="title-line">House of Communication</span>
           <span className="title-line">
-            is <strong>transforming</strong> the
+            <strong> & Advisory</strong>
           </span>
           <span className="title-line">
-            <em>fashion</em> industry
+            <em></em>
           </span>
         </h1>
 
