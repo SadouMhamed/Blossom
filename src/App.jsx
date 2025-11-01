@@ -239,7 +239,7 @@ function App() {
             }
 
             // Animation GSAP sophistiquée pour le scrolling des sections
-            const limitTop = 15; // Limite de 15% du haut
+            const limitTop = 25; // Limite de 25% du haut - stops before reaching navigation
             const yPosition = Math.max(limitTop, (1 - progress) * 100);
 
             // Animation principale avec effets GSAP
