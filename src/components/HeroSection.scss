@@ -128,14 +128,14 @@
           letter-spacing: 0.08em; // Slightly increased for better readability
 
           .author-link {
-            color: inherit;
+            color: #ff5722; // Orange color by default
             text-decoration: none;
             position: relative;
             transition: all 0.3s ease;
 
             &:hover {
-              color: #ff5722; // Orange color on hover
               text-decoration: underline;
+              opacity: 0.8; // Slightly dimmed on hover
             }
           }
         }

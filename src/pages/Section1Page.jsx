@@ -1,8 +1,46 @@
 import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import CustomCursor from "../components/CustomCursor";
 import "./Section1Page.scss";
 
 const Section1Page = ({ onBack }) => {
+  const [headerVisible, setHeaderVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  // Handle scroll to show/hide header
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY < 10) {
+            // Always show at top
+            setHeaderVisible(true);
+          } else if (currentScrollY < lastScrollY.current) {
+            // Scrolling up - show header
+            setHeaderVisible(true);
+          } else if (
+            currentScrollY > lastScrollY.current &&
+            currentScrollY > 50
+          ) {
+            // Scrolling down - hide header (reduced threshold from 100 to 50)
+            setHeaderVisible(false);
+          }
+
+          lastScrollY.current = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Animations variants
   const pageVariants = {
     initial: { opacity: 0 },
@@ -44,7 +82,10 @@ const Section1Page = ({ onBack }) => {
         exit="exit"
       >
         {/* Header Navigation */}
-        <motion.header className="page-header" variants={sectionVariants}>
+        <motion.header
+          className={`page-header ${headerVisible ? "visible" : "hidden"}`}
+          variants={sectionVariants}
+        >
           <div className="header-left">
             <span className="section-number">01 - 04</span>
             <span className="section-title">

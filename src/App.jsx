@@ -16,10 +16,9 @@ import Section2 from "./components/Section2";
 import Section3 from "./components/Section3";
 import Section4 from "./components/Section4";
 import Section1Page from "./pages/Section1Page";
-// TODO: Import other section pages when they exist
-// import Section2Page from "./pages/Section2Page";
-// import Section3Page from "./pages/Section3Page";
-// import Section4Page from "./pages/Section4Page";
+import Section2Page from "./pages/Section2Page";
+import Section3Page from "./pages/Section3Page";
+import Section4Page from "./pages/Section4Page";
 
 // Enregistrer les plugins GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -329,23 +328,16 @@ function App() {
     return <Section1Page onBack={handleBackToHome} />;
   }
 
-  // TODO: Add other section pages when they are created
   if (currentPage === "section2") {
-    // return <Section2Page onBack={handleBackToHome} />;
-    console.log("Section2Page not yet implemented");
-    setCurrentPage("home"); // Fallback to home for now
+    return <Section2Page onBack={handleBackToHome} />;
   }
 
   if (currentPage === "section3") {
-    // return <Section3Page onBack={handleBackToHome} />;
-    console.log("Section3Page not yet implemented");
-    setCurrentPage("home"); // Fallback to home for now
+    return <Section3Page onBack={handleBackToHome} />;
   }
 
   if (currentPage === "section4") {
-    // return <Section4Page onBack={handleBackToHome} />;
-    console.log("Section4Page not yet implemented");
-    setCurrentPage("home"); // Fallback to home for now
+    return <Section4Page onBack={handleBackToHome} />;
   }
 
   return (
