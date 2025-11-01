@@ -136,7 +136,7 @@ function App() {
   const [showLoading, setShowLoading] = useState(true);
   const [showTransition, setShowTransition] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentSection, setCurrentSection] = useState(1);
+  const [currentSection, setCurrentSection] = useState(0); // Start at 0 for hero section
   const [expandedSection, setExpandedSection] = useState(null); // null, 1, 2, 3, 4
   const [currentPage, setCurrentPage] = useState("home"); // 'home', 'section1', 'section2', etc.
 
@@ -201,6 +201,11 @@ function App() {
         scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress;
+
+          // Set currentSection to 0 when at hero section
+          if (progress < 0.1) {
+            setCurrentSection(0);
+          }
 
           // Fade out fluide du contenu à l'intérieur de la hero section
           const heroContent = document.querySelectorAll(
@@ -416,6 +421,19 @@ function App() {
       {/* Navigation sections à droite */}
       {!showLoading && !showTransition && (
         <div className="section-navigation">
+          {/* Hero Section Dot */}
+          <div
+            className={`section-nav-item hero-nav ${
+              currentSection === 0 || currentSection === null ? "active" : ""
+            } clickable`}
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            <span className="nav-dot-inner"></span>
+          </div>
+
+          {/* Section Dots 1-4 */}
           {[1, 2, 3, 4].map((num) => (
             <div
               key={num}
