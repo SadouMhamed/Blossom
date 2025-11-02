@@ -243,7 +243,8 @@ function App() {
             }
 
             // Animation GSAP sophistiquée pour le scrolling des sections
-            const limitTop = 25; // Limite de 25% du haut - stops before reaching navigation
+            // 10% gap from top for all screens - stops before navigation bar
+            const limitTop = 10;
             const yPosition = Math.max(limitTop, (1 - progress) * 100);
 
             // Animation principale avec effets GSAP
@@ -460,7 +461,8 @@ function App() {
             <div className="menu-links">
               <a
                 href="#section1"
-                className="clickable"
+                className="clickable menu-item"
+                data-section-color="#a8b5a0"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="menu-number">01</span>
@@ -470,7 +472,8 @@ function App() {
               </a>
               <a
                 href="#section2"
-                className="clickable"
+                className="clickable menu-item"
+                data-section-color="#e8a5c4"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="menu-number">02</span>
@@ -480,7 +483,8 @@ function App() {
               </a>
               <a
                 href="#section3"
-                className="clickable"
+                className="clickable menu-item"
+                data-section-color="#f4d03f"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="menu-number">03</span>
@@ -490,7 +494,8 @@ function App() {
               </a>
               <a
                 href="#section4"
-                className="clickable"
+                className="clickable menu-item"
+                data-section-color="#a8c5e8"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="menu-number">04</span>
