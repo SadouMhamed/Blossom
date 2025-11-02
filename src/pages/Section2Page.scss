@@ -163,6 +163,7 @@
       right: 0;
       bottom: 0;
       box-sizing: border-box;
+      overflow: hidden; // Hide elements during swap animation
       border: none;
     }
 
@@ -173,6 +174,7 @@
       padding: 0; // No padding
       margin: 0; // No margin
       height: 100%; // Full height
+      will-change: transform; // Optimize animation performance
 
       .hero-image {
         width: 100%;
@@ -229,6 +231,7 @@
       justify-content: center;
       position: relative;
       z-index: 1; // Ensure content appears above image
+      will-change: transform; // Optimize animation performance
 
       &.pink-bg {
         background: #e8a5c4;

@@ -7,6 +7,11 @@ const Section2Page = ({ onBack }) => {
   const [headerVisible, setHeaderVisible] = useState(true);
   const lastScrollY = useRef(0);
 
+  // Reset scroll position to top when page loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Handle scroll to show/hide header
   useEffect(() => {
     let ticking = false;
@@ -69,6 +74,44 @@ const Section2Page = ({ onBack }) => {
     },
   };
 
+  // Swap animation variants - Left side (image) goes up then to right
+  const heroLeftVariants = {
+    initial: {
+      x: 0,
+      y: 0,
+      opacity: 0,
+    },
+    animate: {
+      x: ["0%", "0%", "100%", "100%"], // Stay left, stay left, move ALL the way right, stay right
+      y: ["0%", "-20%", "-20%", "0%"], // Normal, up, stay up, down to normal
+      opacity: [0, 1, 1, 1],
+      transition: {
+        duration: 2,
+        times: [0, 0.3, 0.7, 1],
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  // Swap animation variants - Right side (content) goes down then to left
+  const heroRightVariants = {
+    initial: {
+      x: 0,
+      y: 0,
+      opacity: 0,
+    },
+    animate: {
+      x: ["0%", "0%", "-100%", "-100%"], // Stay right, stay right, move ALL the way left, stay left
+      y: ["0%", "20%", "20%", "0%"], // Normal, down, stay down, up to normal
+      opacity: [0, 1, 1, 1],
+      transition: {
+        duration: 2,
+        times: [0, 0.3, 0.7, 1],
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <>
       {/* Custom Cursor */}
@@ -121,10 +164,15 @@ const Section2Page = ({ onBack }) => {
           </div>
         </motion.header>
 
-        {/* Hero Section */}
+        {/* Hero Section - With Swap Animation */}
         <motion.section className="hero-section" variants={sectionVariants}>
           <div className="hero-container">
-            <div className="hero-left">
+            <motion.div
+              className="hero-left"
+              variants={heroLeftVariants}
+              initial="initial"
+              animate="animate"
+            >
               <motion.div className="hero-image" variants={imageVariants}>
                 <div className="image-placeholder">
                   <img
@@ -134,9 +182,14 @@ const Section2Page = ({ onBack }) => {
                   />
                 </div>
               </motion.div>
-            </div>
+            </motion.div>
 
-            <div className="hero-right pink-bg">
+            <motion.div
+              className="hero-right pink-bg"
+              variants={heroRightVariants}
+              initial="initial"
+              animate="animate"
+            >
               <div className="hero-content">
                 <motion.div
                   className="section-number"
@@ -192,7 +245,7 @@ const Section2Page = ({ onBack }) => {
                   EXPLORE
                 </motion.button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </motion.section>
 
