@@ -120,6 +120,11 @@ const HeroSection = () => {
       >
         <div className="hero-image">
           <div className="image-placeholder">
+            <img
+              src="/Blossom.png"
+              alt="Blossom & Partners"
+              className="hero-img"
+            />
             <div className="orange-circle">
               <span className="arrow">↗</span>
             </div>

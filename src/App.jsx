@@ -195,7 +195,7 @@ function App() {
       // Animation fade out du contenu de la hero section dès le début du scroll
       ScrollTrigger.create({
         trigger: sectionsContainer,
-        start: "top 95%", // Commence très tôt quand on commence à scroller
+        start: "top 100%", // Commence très tôt quand on commence à scroller
         end: "30% center", // Se termine quand la première section apparaît
         scrub: 1,
         onUpdate: (self) => {
@@ -386,17 +386,19 @@ function App() {
           </div>
           <div className="header-center">
             <div className="impact-badge">
-              <span className="vc-logo">VC</span>
-              <span className="impact-text">Impact</span>
-              <span className="report-text">Report</span>
-              <span className="year-badge">2023</span>
+              <span className="vc-logo">B </span>
+              <span className="report-text">Simplicity </span>
+              <span className="impact-text">Speaks </span>
+              <span className="report-text">Loud. </span>
+
+              <span className="year-badge"></span>
             </div>
           </div>
           <div className="header-right">
             {!expandedSection && (
               <>
                 <a href="#" className="download-link clickable">
-                  Download the full report
+                  Book a Meeting
                 </a>
                 <button
                   className="menu-btn clickable"
