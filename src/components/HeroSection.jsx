@@ -1,11 +1,24 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./HeroSection.scss";
 
 const HeroSection = () => {
+  // Animation variants
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section className="hero-section">
       <div className="hero-left">
-        <div className="hero-top">
+        <motion.div
+          className="hero-top"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUpVariants}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="long-live-text">
             A bold approach
             <br />
@@ -25,9 +38,16 @@ const HeroSection = () => {
               <div>Inspire Always.</div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <h1 className="main-title" data-splitting>
+        <motion.h1
+          className="main-title"
+          data-splitting
+          initial="hidden"
+          animate="visible"
+          variants={fadeUpVariants}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           <span className="title-line">House of Communication</span>
           <span className="title-line">
             <strong> & Advisory</strong>
@@ -35,9 +55,15 @@ const HeroSection = () => {
           <span className="title-line">
             <em></em>
           </span>
-        </h1>
+        </motion.h1>
 
-        <div className="quotes-section">
+        <motion.div
+          className="quotes-section"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUpVariants}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
           <div className="quote-block">
             <p className="quote-text">
               "At Blossom &a Partners, I wanted to build more than a consultancy
@@ -82,10 +108,16 @@ const HeroSection = () => {
               , <strong>Founder & Director</strong>
             </cite>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="hero-right">
+      <motion.div
+        className="hero-right"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUpVariants}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
         <div className="hero-image">
           <div className="image-placeholder">
             <div className="orange-circle">
@@ -93,11 +125,17 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="scroll-indicator">
+      <motion.div
+        className="scroll-indicator"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUpVariants}
+        transition={{ duration: 0.8, delay: 0.8 }}
+      >
         <span>SCROLL TO DISCOVER</span>
-      </div>
+      </motion.div>
     </section>
   );
 };
