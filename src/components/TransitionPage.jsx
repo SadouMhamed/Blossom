@@ -41,13 +41,13 @@ const TransitionPage = ({ onComplete }) => {
         <div className="vestiaire-logo">BLOSSOM&PARTNERS</div>
 
         <div className="welcome-text">
-          <div className="welcome-line">Welcome To</div>
-          <div className="year-line">The 2023</div>
-          <div className="brand-line">Vestiaire Collective</div>
-          <div className="report-line">Impact Report</div>
+          <div className="welcome-line">Welcome </div>
+          <div className="year-line">Step into the world</div>
+          <div className="brand-line">of Blossom & Partners</div>
+          <div className="report-line">where ideas bloom</div>
         </div>
 
-        <div className="long-live-text">Long Live Fashion!</div>
+        <div className="long-live-text"> and strategies flourish.</div>
       </div>
     </div>
   );
