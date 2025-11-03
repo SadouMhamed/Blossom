@@ -33,13 +33,12 @@ const Section2 = ({ onClick, className = "" }) => {
 
         <div className="section-content">
           <h2 className="section-title">
-            A Collective
+            What Sets Us Apart <em>Our Values</em>
             <br />
-            That <em>Triggers</em>
+            Our
             <br />
-            Systemic
+            <em>Founding Values</em>
             <br />
-            Change
           </h2>
 
           <button

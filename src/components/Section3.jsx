@@ -33,13 +33,12 @@ const Section3 = ({ onClick, className = "" }) => {
 
         <div className="section-content">
           <h2 className="section-title">
-            A Collective
             <br />
-            That
+            <em>Concise & Impactful</em>
             <br />
-            <em>Transforms</em>
+            Tailor made solutions to reveal your
             <br />
-            Fashion
+            <em>uniqueness.</em>
           </h2>
 
           <button

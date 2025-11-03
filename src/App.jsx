@@ -467,7 +467,7 @@ function App() {
               >
                 <span className="menu-number">01</span>
                 <span className="menu-title">
-                  A Collective that benefits the planet & society
+                  More than an agency. A House.
                 </span>
               </a>
               <a
@@ -478,7 +478,7 @@ function App() {
               >
                 <span className="menu-number">02</span>
                 <span className="menu-title">
-                  A Collective that triggers systemic change
+                  What Sets Us Apart - Our Founding Values
                 </span>
               </a>
               <a
@@ -489,7 +489,7 @@ function App() {
               >
                 <span className="menu-number">03</span>
                 <span className="menu-title">
-                  A Collective that transforms fashion
+                  Concise & Impactful - Tailor made solutions
                 </span>
               </a>
               <a
@@ -500,7 +500,7 @@ function App() {
               >
                 <span className="menu-number">04</span>
                 <span className="menu-title">
-                  A Collective that believes in people
+                  Subtle & Engaging - Ready to write the next chapter?
                 </span>
               </a>
             </div>
